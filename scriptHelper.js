@@ -20,8 +20,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-function validateInput(testInput) {
-   
+function validateInput(testInput) {   
     if (isNaN(testInput)) {
         return "Not a number";
     } else if (testInput === "") {
@@ -29,29 +28,25 @@ function validateInput(testInput) {
     } else {
         return "Entries are validated"
     }
-    //let x = document.forms(pilot, copilot, fuelLevel, cargoLevel).validateInput;
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    let cargoLevel = document.getElementsByName("cargoMass");
-    let copilot = document.getElementsByName("copilotName");
-    let fuelLevel = document.getElementsByName("fuelLevel");
-    let pilot = document.getElementsByName("pilotName");
+    let cargoMass = document.getElementsByName("cargoMass");
+    let copilotName = document.getElementsByName("copilotName");
+    let fuel = document.getElementsByName("fuelLevel");
+    let pilotName = document.getElementsByName("pilotName");
     
-    if (validateInput(copilot.value) === "Empty" || (validateInput(pilot.value) === "Empty") || (validateInput(cargoLevel.value) === "Empty") === (validateInput(fuelLevel.value) === "Empty")) {
+    if (validateInput(copilotName.value) === "Empty" || (validateInput(pilotName.value) === "Empty") || (validateInput(cargoMass.value) === "Empty") === (validateInput(fuel.value) === "Empty")) {
         window.alert("All input boxes required data.");
-    } if (validateInput(cargoLevel.value) === "Not a number" || (validateInput(fuelLevel.value) === "Not a number")) {
+    } if (validateInput(cargoMass.value) === "Not a number" || (validateInput(fuel.value) === "Not a number")) {
         window.alert("Values entered should be a number.");
-    } if (validateInput(copilot.value) === "Is s number" || (validateInput(pilot.value) === "Is a number")) {
+    } if (validateInput(copilotName.value) === "Is s number" || (validateInput(pilotName.value) === "Is a number")) {
         window.alert("Names need to be letters not numbers.");
-    } 
-   
+    }    
 }
 
 async function myFetch() {
-
     let planetsReturned;
-
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
         return response.json().then(function(json) {
             console.log("Ive been hit!");
@@ -64,7 +59,6 @@ async function myFetch() {
 function pickPlanet(planets) {
     let randomNumber = Math.floor(Math.random()*5);
 }
-    //random number generator..
 
 addDestinationInfo();
 

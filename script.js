@@ -14,12 +14,11 @@
 
 const { myFetch } = require("./scriptHelper");
 
-// const scriptHelper = new require('./scriptHelper.js')
+const scriptHelper = new require('./scriptHelper.js')
 
-//const { formSubmission } = require("./scriptHelper");
+const { formSubmission } = require("./scriptHelper");
 
-//const { myFetch } = require("./scriptHelper"); // this imports myFetch from scriptHelper
-
+const { myFetch } = require("./scriptHelper"); // this imports myFetch from scriptHelper
 
 window.addEventListener("load", function() {
     let listedPlanets;
@@ -32,7 +31,7 @@ window.addEventListener("load", function() {
     });
                 // add eventListener on submit form form submition the submit button, DOM form
                 // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   //this.document.getElementById("formSubmit").addEventListener("click", function() {
+   this.document.getElementById("formSubmit").addEventListener("click", function() {
        console.log("Welllll");
       // alert("All textboxes need information!");
         //console.log(myFetch());
@@ -51,8 +50,4 @@ window.addEventListener("load", function() {
        })
     
    });
-
- 
-  
-   
-
+});
